@@ -15,52 +15,63 @@
 
 <body>
     <div class="container">
-        <div class="wrap">
-            <form class="search-form" id = "search-form">
+        <div class="weather-app-container">
+            <div class="weather-app">
+                <form class="search-form" id = "search-form">
+                    <div class="row">
+                        <div class="col-9">
+                            <input 
+                            type="search"
+                            placeholder="Search City..."
+                            class="form-control"
+                            id = "city-search" 
+                            autofocus="off"
+                            autocomplete="off" />
+                        </div>
+
+                        <div class="col-3">
+                            <input 
+                            type="submit" 
+                            value="Search" 
+                            class="form-control btn btn-primary shadow-sm" />
+                        </div>
+
+                    </div>
+                </form>
+
+                <h1 id = "city"></h1>
+                <ul>
+                    <li id ="date"></li>
+                    <li id="description"></li>
+                </ul>
+                
                 <div class="row">
-                    <div class="col-9">
-                        <input 
-                        type="search"
-                        placeholder="Search City..."
-                        class="form-control"
-                        id = "city-search" 
-                        autofocus="off"
-                        autocomplete="off" />
+                    <div class="col-6">
+                        <div class="d-flex weather-temperature">
+                            <img  
+                            src="images/mostly sunny.png" 
+                            alt="clear Mostly-sunny-created-by-Good-Ware - Flaticon"
+                            id="icon"
+                            />
+                            <div>
+                                <span class="temperature" id="temperature"></span>
+                                <span class="units">°C |<a href="#">°F</a></span>
+                            </div>   
+                        </div>    
                     </div>
-
-                    <div class="col-3">
-                        <input 
-                        type="submit" 
-                        value="Search" 
-                        class="form-control btn btn-primary shadow-sm" />
+                    <div class="col-6">
+                        <ul>
+                            <li>Humidity: <span id="humidity"></span>%</li>
+                            <li>Wind: <span id="wind"></span>km/h</li>
+                        </ul>
                     </div>
-
-                </div>
-            </form>
-
-            <h1 id = "city"></h1>
-            <ul>
-                <li id ="date"></li>
-                <li id="description"></li>
-            </ul>
-            
-            <div class="row">
-                <div class="col-6">
-                    <span class="temperature" id="temperature"></span>
-                    <span class="units">°C</span>
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li>Humidity: <span id="humidity"></span>%</li>
-                        <li>Wind: <span id="wind"></span>km/h</li>
-                    </ul>
                 </div>
             </div>
+            <p class="source-code">
+                <a href="https://github.com/hafsa-hassan/weather-app/tree/main">Open-source code</a>
+                , by Hafsa Hassan
+            </p>
         </div>
-        <p class="source-code">
-            <a href="https://github.com/hafsa-hassan/weather-app/tree/main">Open-source code</a>
-            , by Hafsa Hassan
-        </p>
     </div>
     
 <script src="src/script.js"></script>    
