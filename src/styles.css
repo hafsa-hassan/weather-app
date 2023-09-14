@@ -40,7 +40,7 @@ li{
 .wrap{
     border: 1px solid #dadde1;
     padding: 20px;
-    margin: 20px auto;
+    margin: 20px 0;
     max-width: 700px;
     border-radius: 10px;
 }
@@ -50,3 +50,4 @@ li{
 .weather-image{
     height: 70px;
 }
+
