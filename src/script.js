@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function showWeather(event){
     event.preventDefault();
     let city = document.querySelector("#city-search").value;
-    searchCity(city)
+    searchCity(city);
     }
     
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", showWeather);
 
-  function formatDate(date) {
+  function formatDate(timeStamp) {
+    let date = new Date(timeStamp);
     let days = [
       "Sunday",
       "Monday",
@@ -31,23 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     let hours = date.getHours();
-    if (hours < 10){
-      hours = `0${hours}`;
-    }
+      if (hours < 10){
+        hours = `0${hours}`;
+      }
     let minutes = date.getMinutes();
-    if (minutes < 10){
-      minutes = `0${minutes}`;
-    }
+      if (minutes < 10){
+        minutes = `0${minutes}`;
+      }
     let day = days[date.getDay()];
 
     let displayDate = `${day} ${hours}:${minutes}`;
     return displayDate;
   }
-  let currentTimeElement = document.querySelector("#date");
-  currentTimeElement.innerHTML = `${formatDate(new Date())}`;
   
   function showTemperature(response){
-    let dataResponse = response.data;
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = 
     Math.round(
@@ -60,13 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       response.data.wind.speed
       );
     document.querySelector("#description").innerHTML = response.data.weather[0].description;
-
-
-    let dateTime = response.data.dt
-    let time = new Date(dateTime * 1000);
-    let currentTimeElement = document.querySelector("#date");
-    currentTimeElement.innerHTML = `${formatDate(time)}`;
-    console.log(dataResponse);
+    document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000);
   }
 
   
