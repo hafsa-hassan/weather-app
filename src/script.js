@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     celciusTemperature = response.data.main.temp;
 
   }
+
   function showFahrenheit(event){
     event.preventDefault();
     //remove the active class for the celcius link
@@ -93,6 +94,4 @@ document.addEventListener("DOMContentLoaded", function () {
   let celciusLink = document.querySelector("#celcius-link");
   celciusLink.addEventListener("click", showCelcius);
   
-  
-
 });
