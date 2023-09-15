@@ -63,9 +63,35 @@ document.addEventListener("DOMContentLoaded", function () {
       "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
     document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
+    celciusTemperature = response.data.main.temp;
 
   }
+  function showFahrenheit(event){
+    event.preventDefault();
+    //remove the active class for the celcius link
+    celciusLink.classList.remove("active");
+    //add the active class for the fahrenheit link
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
+    document.querySelector("#temperature").innerHTML = fahrenheitTemperature;
+  }
 
+  function showCelcius(event){
+    event.preventDefault();
+    //remove the active class for the fahrenheit link
+    fahrenheitLink.classList.remove("active");
+    //add the active class for the celcius link
+    celciusLink.classList.add("active");
+    document.querySelector("#temperature").innerHTML = Math.round(celciusTemperature);
+  }
+
+  let celciusTemperature = null;
+
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", showFahrenheit);
+
+  let celciusLink = document.querySelector("#celcius-link");
+  celciusLink.addEventListener("click", showCelcius);
   
   
 
