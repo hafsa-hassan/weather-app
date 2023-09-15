@@ -29,6 +29,14 @@ li::first-letter{
     text-transform: capitalize;
 }
 
+.source-code{
+    text-decoration: none;
+}
+
+.source-code:hover {
+    text-decoration: underline;
+}
+
 .weather-app-container {
     max-width: 600px;
     margin: 30px auto;
@@ -36,12 +44,16 @@ li::first-letter{
 
 .weather-app {
     padding: 20px;
-    border: 1px solid #dadde1;
+    border: 1px solid #b5b6b8;
     border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .search-form{
     margin-bottom: 20px;
+}
+.form-control{
+    border: 1px solid #b5b6b8;
 }
 
 .weather-temperature img {

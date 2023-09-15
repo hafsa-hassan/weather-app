@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
   }
-  searchCity("London");
+  searchCity("New York");
 
   function showWeather(event){
     event.preventDefault();
