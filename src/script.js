@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       response.data.wind.speed
       );
     document.querySelector("#description").innerHTML = response.data.weather[0].description;
-    document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000);
+    document.querySelector("#date").innerHTML = `last updated: ${formatDate(response.data.dt * 1000)}`;
     document.querySelector("#icon").setAttribute(
       "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getForecast(coordinates){
-    console.log(coordinates)
     let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
@@ -122,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showForecast(result){
-    console.log(result.data)
     let forecast = result.data.daily;
     let forecastElement = document.querySelector("#weather-forecast");
     let forecastHTML = `<div class="row">`;
