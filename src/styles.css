@@ -47,6 +47,7 @@ li::first-letter{
     border: 1px solid #b5b6b8;
     border-radius: 5px;
     margin-bottom: 5px;
+    background-color: rgb(245, 239, 233);
 }
 
 .search-form{
